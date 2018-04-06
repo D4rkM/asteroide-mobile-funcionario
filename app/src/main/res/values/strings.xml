@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MotoristaAsteroide</string>
+    <string name="title_activity_home_motorista">HomeMotoristaActivity</string>
+    <string name="title_activity_perfil_motorista">PerfilMotoristaActivity</string>
+    <string name="title_activity_qrcode_motorista">QRCodeMotoristaActivity</string>
+    <string name="title_activity_notificacao_motorista">NotificacaoMotoristaActivity</string>
+    <string name="aparecer">Escolha uma mensagem</string>
+</resources>
