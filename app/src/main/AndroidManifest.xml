@@ -49,6 +49,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.a16254868.motoristaasteroide.HomeMotoristaActivity" />
         </activity>
+        <activity
+            android:name=".LocalizacaoMotoristaActivity"
+            android:label="Localização"
+            android:parentActivityName=".HomeMotoristaActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.a16254868.motoristaasteroide.HomeMotoristaActivity" />
+        </activity>
     </application>
 
 </manifest>

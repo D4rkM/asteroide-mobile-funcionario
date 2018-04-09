@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
             val login = txtLoginUsuario.text.toString()
             val senha = txtSenhaUsuario.text.toString()
 
-            /*doAsync {
-                val url = "http://10.0.2.2/inf4m/asteroide/API/v1/login_api.php"
+             /*doAsync {
+                val url = "http://10.0.2.2/inf4m/asteroide-master/API/v1/login_api.php"
 
                 val map = HashMap<String, String>()
                 map.put("login", login)

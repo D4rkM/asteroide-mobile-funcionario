@@ -6,21 +6,18 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
-import com.example.a16254868.motoristaasteroide.R.id.toolbar
 
 import kotlinx.android.synthetic.main.activity_notificacao_motorista.*
 import kotlinx.android.synthetic.main.content_notificacao_motorista.*
 
-class NotificacaoMotoristaActivity : AppCompatActivity(){
-
-
-
+class NotificacaoMotoristaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notificacao_motorista)
         setSupportActionBar(toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val personNames = arrayOf("O ônibus está saindo do terminal", "O ônibus irá atrasar", "O ônibus quebrou", "O ônibus chegou na parada")
         if (spinner != null) {
@@ -30,9 +27,7 @@ class NotificacaoMotoristaActivity : AppCompatActivity(){
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-
                     //Toast.makeText(applicationContext, personNames[position], Toast.LENGTH_SHORT).show()
-
                 }
 
                 override fun onNothingSelected(p0: AdapterView<*>?) {

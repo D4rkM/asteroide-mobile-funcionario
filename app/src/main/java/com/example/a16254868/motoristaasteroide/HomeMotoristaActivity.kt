@@ -41,6 +41,12 @@ class HomeMotoristaActivity : AppCompatActivity() {
 
         }
 
+        imgLocalizacao.setOnClickListener {
+            val intent = Intent(this,  LocalizacaoMotoristaActivity::class.java)
+
+            startActivity(intent)
+        }
+
         /*@Override
         public boolean onCreateOptionsMenu(Menu menu) {
             getMenuInflater().inflate(R.menu.home, menu);
