@@ -1,4 +1,4 @@
-package com.example.a16254868.motoristaasteroide;
+package utils;
 
 import android.util.Log;
 
@@ -10,68 +10,76 @@ import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by 16254868 on 05/04/2018.
- */
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
-public class HttpConnection {
+public class HttpConnection{
+    private static class MyTrustManager implements X509TrustManager {
+        @Override
+        public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+        }
+
+        @Override
+        public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+        }
+
+        @Override
+        public X509Certificate[] getAcceptedIssuers() {
+            return null;
+        }
+    }
 
     public static String get(String UrlString) {
-
-
-        // These two need to be declared outside the try/catch
-        // so that they can be closed in the finally block.
-        HttpURLConnection urlConnection = null;
+        HttpsURLConnection urlConnection = null;
         BufferedReader reader = null;
-
-        // Will contain the raw JSON response as a string.
         String stringJson = null;
 
         try {
-            // Construct the URL for the OpenWeatherMap query
-            // Possible parameters are avaiable at OWM's forecast API page, at
-            // http://openweathermap.org/API#forecast
             URL url = new URL(UrlString);
-
-            // Create the request to OpenWeatherMap, and open the connection
-            urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection = (HttpsURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
+            SSLContext context = SSLContext.getInstance("TLS");
+
+            TrustManager[] tmlist = {new MyTrustManager()};
+            context.init(null, tmlist, null);
+            urlConnection.setSSLSocketFactory(context.getSocketFactory());
             urlConnection.connect();
 
-            // Read the input stream into a String
             InputStream inputStream = urlConnection.getInputStream();
             StringBuffer buffer = new StringBuffer();
             if (inputStream == null) {
-                // Nothing to do.
                 stringJson = null;
             }
+
             reader = new BufferedReader(new InputStreamReader(inputStream));
 
             String line;
             while ((line = reader.readLine()) != null) {
-                // Since it's JSON, adding a newline isn't necessary (it won't affect parsing)
-                // But it does make debugging a *lot* easier if you print out the completed
-                // buffer for debugging.
                 buffer.append(line + "\n");
             }
 
             if (buffer.length() == 0) {
-                // Stream was empty.  No point in parsing.
                 stringJson = null;
             }
+
             stringJson = buffer.toString();
-        } catch (IOException e) {
+        } catch (IOException | NoSuchAlgorithmException | KeyManagementException e) {
             Log.e("PlaceholderFragment", "Error ", e);
-            // If the code didn't successfully get the weather data, there's no point in attemping
-            // to parse it.
             stringJson = null;
-        } finally {
+        } finally{
             if (urlConnection != null) {
                 urlConnection.disconnect();
             }
+
             if (reader != null) {
                 try {
                     reader.close();
@@ -84,7 +92,7 @@ public class HttpConnection {
         return stringJson;
     }
 
-    public static String post(String mainUrl, HashMap<String, String> parameterList) {
+    public static String post(String mainUrl, HashMap<String,String> parameterList) {
         String response = "";
         try {
             URL url = new URL(mainUrl);
@@ -99,7 +107,6 @@ public class HttpConnection {
 
             byte[] postDataBytes = postData.toString().getBytes("UTF-8");
 
-
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -110,16 +117,15 @@ public class HttpConnection {
             Reader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
 
             StringBuilder sb = new StringBuilder();
-            for (int c; (c = in.read()) >= 0; )
+            for (int c; (c = in.read()) >= 0;)
                 sb.append((char) c);
             response = sb.toString();
-
 
             return response;
         } catch (Exception excep) {
             excep.printStackTrace();
         }
+
         return response;
     }
 }
-

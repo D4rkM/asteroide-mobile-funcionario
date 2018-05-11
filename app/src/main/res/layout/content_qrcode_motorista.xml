@@ -20,20 +20,23 @@
         android:layout_marginTop="20sp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/btn"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
         android:text="Validar QRCODE"
-        android:layout_gravity="center"
-        android:layout_marginTop="150dp"/>
+        android:background="#4d9b61"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Passagem Validada com Sucesso"
+        android:text=""
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:textStyle="bold"
         android:textSize="18dp"
-        android:textColor="#24840e"/>
+        android:textColor="#24840e"
+        android:id="@+id/txtValidacao"/>
 
 </LinearLayout>

@@ -5,48 +5,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.a16254868.motoristaasteroide.MainActivity" android:orientation="vertical"
-    android:padding="30dp">
+    android:padding="30dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
-    <ImageView
-        android:layout_width="226dp"
-        android:layout_height="129dp"
-        android:layout_gravity="center_horizontal"
-        android:src='@drawable/ic_logo_cms' />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Usuário:"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:textSize="18sp"/>
-
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtLoginUsuario"/>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Senha:"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:textSize="18sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtSenhaUsuario"
-        android:inputType="textPassword"/>
+            <ImageView
+                android:layout_width="226dp"
+                android:layout_height="129dp"
+                android:layout_gravity="center_horizontal"
+                android:src='@drawable/ic_logo_cms' />
 
-    <Button
-        android:id="@+id/botaoLogar"
-        android:layout_width="167dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:text="Logar"
-        android:background="#4d9b61"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usuário:"
+                android:textStyle="bold"
+                android:layout_marginTop="40dp"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtLoginUsuario"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senha:"
+                android:textStyle="bold"
+                android:layout_marginTop="40dp"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtSenhaUsuario"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/botaoLogar"
+                android:layout_width="167dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="Logar"
+                android:background="#4d9b61"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>

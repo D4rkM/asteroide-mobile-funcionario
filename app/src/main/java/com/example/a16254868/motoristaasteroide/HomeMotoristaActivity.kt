@@ -33,6 +33,8 @@ class HomeMotoristaActivity : AppCompatActivity() {
 
             val intent = Intent(this, QRCodeMotoristaActivity::class.java)
 
+            intent.putExtra("retorno", "")
+
             startActivity(intent)
 
         }
@@ -50,29 +52,6 @@ class HomeMotoristaActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
-
-        /*@Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(R.menu.home, menu);
-            return true;
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            int id = item.getItemId();
-
-            if(id == R.id.lojas){
-                Toast.makeText(this, "asdddddddddddddddddddddd", Toast.LENGTH_SHORT).show();
-            }
-            return super.onOptionsItemSelected(item);
-        }*/
-
-
-
-
-
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

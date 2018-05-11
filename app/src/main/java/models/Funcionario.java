@@ -1,4 +1,4 @@
-package com.example.a16254868.motoristaasteroide;
+package models;
 
 import java.io.Serializable;
 

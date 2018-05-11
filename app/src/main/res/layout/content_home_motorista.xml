@@ -39,18 +39,19 @@
 
         <ImageView
             android:id="@+id/imgMotorista"
-            android:layout_width="99dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="50dp"
             android:src="@drawable/ic_perfil_motorista"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
             />
 
         <ImageView
-            android:layout_width="81dp"
+            android:id="@+id/imgLocalizacao"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="100dp"
             android:src="@drawable/ic_local_motorista"
-            android:id="@+id/imgLocalizacao"/>
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
@@ -63,16 +64,16 @@
         <ImageView
             android:layout_width="102dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
             android:src="@drawable/ic_qrcode_motorista"
-            android:id="@+id/imgQRCode"/>
+            android:id="@+id/imgQRCode"
+            android:layout_weight="1"/>
 
         <ImageView
             android:layout_width="84dp"
             android:layout_height="78dp"
-            android:layout_marginLeft="100dp"
             android:src="@drawable/ic_notificacao_motorista"
-            android:id="@+id/imgNotificaoMotorista"/>
+            android:id="@+id/imgNotificaoMotorista"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
