@@ -5,7 +5,7 @@ package utils
  * FUNÇÃO PARA MUDAR IP DO SERVIDOR
  */
 fun ipServidorComPorta():String{//Retornar IP
-    var ip = "http://10.0.2.2:3000"
+    var ip = "http://192.168.0.1:3000"
 
     return ip
 }

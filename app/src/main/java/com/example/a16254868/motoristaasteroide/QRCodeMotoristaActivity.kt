@@ -72,7 +72,6 @@ class QRCodeMotoristaActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
 
-
                 } else {
 
                     // permission denied, boo! Disable the

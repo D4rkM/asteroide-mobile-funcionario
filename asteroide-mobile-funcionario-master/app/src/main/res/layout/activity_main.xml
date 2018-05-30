@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a16254868.motoristaasteroide.MainActivity" android:orientation="vertical"
+    android:padding="30dp">
+
+    <ImageView
+        android:layout_width="226dp"
+        android:layout_height="129dp"
+        android:layout_gravity="center_horizontal"
+        android:src='@drawable/ic_logo_cms' />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuário:"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLoginUsuario"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senha:"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSenhaUsuario"/>
+
+    <Button
+        android:id="@+id/botaoLogar"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="Logar" />
+
+</LinearLayout>

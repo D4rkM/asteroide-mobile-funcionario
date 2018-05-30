@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.a16254868.motoristaasteroide.HomeMotoristaActivity"
+    tools:showIn="@layout/activity_home_motorista"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ASTEROIDE"
+        android:textSize="18dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="50dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Viagem atual: Jandira X Santos"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#357526"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+
+        <ImageView
+            android:id="@+id/imgMotorista"
+            android:layout_width="99dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/ic_perfil_motorista"
+            />
+
+        <ImageView
+            android:layout_width="81dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/ic_local_motorista"
+            android:id="@+id/imgLocalizacao"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/ic_qrcode_motorista"
+            android:id="@+id/imgQRCode"/>
+
+        <ImageView
+            android:layout_width="84dp"
+            android:layout_height="78dp"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/ic_notificacao_motorista"
+            android:id="@+id/imgNotificaoMotorista"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
